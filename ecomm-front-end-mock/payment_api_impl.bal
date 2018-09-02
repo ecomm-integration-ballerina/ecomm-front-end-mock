@@ -3,7 +3,7 @@ import ballerina/io;
 
 public function getVersion (http:Request req) returns http:Response {
     http:Response res = new;
-    string resPayload = "{manifestVersion=1, name=\"OP-FE Payment\", branch=\"1.52.0\", version=\"1.52.0-2c331c5\",
+    string resPayload = "{manifestVersion=1, name=\"Ecomm-Frontend Payment\", branch=\"1.52.0\", version=\"1.52.0-2c331c5\",
                 commit=\"2c331c532c3f90bcd10ddcaaccb38b60dfb81079\"}";
     res.setTextPayload(resPayload);
 
