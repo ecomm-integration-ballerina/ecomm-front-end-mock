@@ -1,8 +1,8 @@
 FROM ballerina/ballerina:0.981.1
-LABEL maintainer="dev@ballerina.io"
+LABEL maintainer="rajkumarr@wso2.com"
 
 COPY target/ecomm-front-end-mock.balx /home/ballerina 
 
-EXPOSE  7088
+EXPOSE  8280
 
 CMD ballerina run ecomm-front-end-mock.balx

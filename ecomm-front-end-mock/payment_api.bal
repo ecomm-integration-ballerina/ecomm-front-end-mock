@@ -3,7 +3,7 @@ import ballerina/log;
 import ballerina/mime;
 
 endpoint http:Listener paymentListener {
-    port: 7088
+    port: 8280
 };
 
 @http:ServiceConfig {
