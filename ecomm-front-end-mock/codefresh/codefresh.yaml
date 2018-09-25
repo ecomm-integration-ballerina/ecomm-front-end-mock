@@ -6,7 +6,7 @@ steps:
     fail_fast: true
     commands:
     - ls
-    - ballerina build ecomm-front-end-mock
+    - ballerina build
   
   build_image:
     title: Building Docker Image
