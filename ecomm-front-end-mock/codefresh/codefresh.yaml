@@ -1,0 +1,19 @@
+version: '1.0'
+steps:
+  build_package:
+    title: Building Ecomm Front End Mock
+    image: ballerina/ballerina:0.981.1
+    fail_fast: true
+    commands:
+    - ballerina init
+    - ballerina build ecomm-front-end-mock
+  
+  build_image:
+    title: Building Docker Image
+    type: build
+    image_name: rajkumar/ecomm-front-end-mock
+    working_directory: ./
+    no_cache: false
+    no_cf_cache: false
+    tag: '${{CF_BRANCH_TAG_NORMALIZED}}'
+    dockerfile: ecomm-front-end-mock/docker/Dockerfile
