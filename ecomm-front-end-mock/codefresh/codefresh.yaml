@@ -5,7 +5,7 @@ steps:
     image: ballerina/ballerina:0.981.1
     fail_fast: true
     commands:
-    - ballerina init
+    - ballerina version
     - ballerina build ecomm-front-end-mock
   
   build_image:
