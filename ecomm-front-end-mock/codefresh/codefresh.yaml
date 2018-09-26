@@ -7,7 +7,7 @@ steps:
     commands:
     - ls
     - whoami
-    - ballerina build
+    - ballerina build ecomm-front-end-mock
   
   build_image:
     title: Building Docker Image
