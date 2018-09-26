@@ -5,6 +5,8 @@ steps:
     image: rajkumar/ballerina-platform:1.2
     fail_fast: true
     commands:
+    - whoami
+    - ballerina version
     - ballerina init
     - ballerina build ecomm-front-end-mock
   
