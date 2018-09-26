@@ -1,8 +1,12 @@
 version: '1.0'
 steps:
+  setting_permissions:
+    image: bash
+    commands:
+      - chmod -R 777 /codefresh/volume
   build_package:
     title: Building Ecomm Front End Mock
-    image: rajkumar/ballerina-platform:0.981.1
+    image: rajkumar/ballerina-platform:0.981.2
     fail_fast: true
     commands:
     - ballerina init
