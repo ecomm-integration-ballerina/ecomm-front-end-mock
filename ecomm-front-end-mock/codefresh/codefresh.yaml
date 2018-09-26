@@ -23,10 +23,19 @@ steps:
     tag: 0.1.0
     dockerfile: Dockerfile
 
+  push_image:
+    title: Pushing to Docker Registry
+    type: push
+    candidate: '${{BuildingDockerImage}}'
+    tag: 0.1.0
+    registry: dockerhub  
+
   deploy_to_k8s:
     title: Deploying ballerina-generated k8s artifacts
     image: 'codefresh/kube-helm:master'
     commands:
+      - whoami
+      - cat ${{CF_VOLUME_PATH}}/ecomm-front-end-mock/target/kubernetes/ecomm-front-end-mock/ecomm-front-end-mock_deployment.yaml
       - kubectl config use-context ecomm-integration-ballerina@ecomm-integration-ballerina
       - kubectl delete -f ${{CF_VOLUME_PATH}}/ecomm-front-end-mock/target/kubernetes/ecomm-front-end-mock/ecomm-front-end-mock_deployment.yaml 
       - kubectl apply -f ${{CF_VOLUME_PATH}}/ecomm-front-end-mock/target/kubernetes/ecomm-front-end-mock  
