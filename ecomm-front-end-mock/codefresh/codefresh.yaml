@@ -24,7 +24,7 @@ steps:
   push_image:
     title: Pushing to Docker Registry
     type: push
-    candidate: '${{BuildingDockerImage}}'
+    candidate: '${{build_image}}'
     tag: 0.1.0
     registry: dockerhub  
 
