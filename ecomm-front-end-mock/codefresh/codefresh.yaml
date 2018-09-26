@@ -33,6 +33,5 @@ steps:
     image: 'codefresh/kube-helm:master'
     commands:
       - whoami
-      - cat ${{CF_VOLUME_PATH}}/ecomm-front-end-mock/target/kubernetes/ecomm-front-end-mock/ecomm-front-end-mock_deployment.yaml
       - kubectl config use-context ecomm-integration-ballerina@ecomm-integration-ballerina
       - kubectl apply -f ${{CF_VOLUME_PATH}}/ecomm-front-end-mock/target/kubernetes/ecomm-front-end-mock  
