@@ -2,11 +2,9 @@ version: '1.0'
 steps:
   build_package:
     title: Building Ecomm Front End Mock
-    image: rajkumar/ballerina-platform:1.6
+    image: rajkumar/ballerina-platform:0.981.1
     fail_fast: true
     commands:
-    - whoami
-    - ballerina version
     - ballerina init
     - ballerina build ecomm-front-end-mock
   
