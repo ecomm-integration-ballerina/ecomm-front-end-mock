@@ -13,8 +13,7 @@ endpoint http:Listener paymentListener {
 
 @kubernetes:Deployment {
     name: "ecomm-front-end-mock-deployment",    
-    image: "index.docker.io/$env{DOCKER_USERNAME}/ecomm-front-end-mock:0.1.0",
-    username:"$env{DOCKER_USERNAME}",
+    image: "index.docker.io/rajkumar/ecomm-front-end-mock:0.1.0",
     buildImage: false,
     push: false,
     imagePullPolicy: "Always"
