@@ -6,6 +6,7 @@ steps:
     fail_fast: true
     commands:
     - ls
+    - whoami
     - ballerina build
   
   build_image:
