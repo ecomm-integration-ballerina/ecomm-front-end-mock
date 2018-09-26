@@ -1,11 +1,24 @@
 import ballerina/http;
 import ballerina/log;
 import ballerina/mime;
+import ballerinax/kubernetes;
 
+@kubernetes:Service {
+    serviceType: "LoadBalancer",
+    name: "ecomm-front-end-mock-service" 
+}
 endpoint http:Listener paymentListener {
     port: 8280
 };
 
+@kubernetes:Deployment {
+    name: "ecomm-front-end-mock-deployment",    
+    image: "index.docker.io/$env{DOCKER_USERNAME}/ecomm-front-end-mock:0.1.0",
+    username:"$env{DOCKER_USERNAME}",
+    buildImage: false,
+    push: false,
+    imagePullPolicy: "Always"
+}
 @http:ServiceConfig {
     basePath: "/ecomm-frontend/v2"
 }
