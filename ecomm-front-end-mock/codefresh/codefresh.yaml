@@ -18,8 +18,6 @@ steps:
     type: build
     image_name: rajkumar/ecomm-front-end-mock
     working_directory: ./target/kubernetes/ecomm-front-end-mock/docker/
-    no_cache: false
-    no_cf_cache: false
     tag: 0.1.0
     dockerfile: Dockerfile
 
