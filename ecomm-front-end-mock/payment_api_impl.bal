@@ -17,7 +17,7 @@ public function addInvoice (http:Request req, string referenceId, Invoice invoic
     if (!req.hasHeader("Api-Key") || req.getHeader("Api-Key") != "hedge") {
         res.statusCode = 401;
         res.setTextPayload("No access. Wrong API key");
-    } if (!req.hasHeader("Context-Id") || req.getHeader("Context-Id") != "ECOMM_US") {
+    } if (!req.hasHeader("Context-Id")) {
         res.statusCode = 403;
         res.setTextPayload("The context is not valid or can not be used with this service");
         io:println(req.getHeader("Context-Id"));
