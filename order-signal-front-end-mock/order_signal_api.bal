@@ -2,14 +2,14 @@ import ballerina/http;
 import ballerina/log;
 import ballerina/mime;
 
-endpoint http:Listener paymentListener {
-    port: 8290
+endpoint http:Listener notificationListener {
+    port: 8280
 };
 
 @http:ServiceConfig {
     basePath: "/ecomm-frontend/v2/notification/backend"
 }
-service NotificationAPI bind paymentListener {
+service NotificationAPI bind notificationListener {
 
     @http:ResourceConfig { 
         methods:["POST"],

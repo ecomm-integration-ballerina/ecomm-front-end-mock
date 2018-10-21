@@ -1,0 +1,41 @@
+---
+apiVersion: "extensions/v1beta1"
+kind: "Deployment"
+metadata:
+  annotations: {}
+  finalizers: []
+  labels:
+    app: "order-signal-front-end-mock"
+    integration: "order-signal"
+  name: "order-signal-front-end-mock-deployment"
+  namespace: "default"
+  ownerReferences: []
+spec:
+  replicas: 1
+  template:
+    metadata:
+      annotations: {}
+      finalizers: []
+      labels:
+        app: "order-signal-front-end-mock"
+        integration: "order-signal"
+      ownerReferences: []
+    spec:
+      containers:
+      - args: []
+        command: []
+        env: []              
+        envFrom: []
+        image: "rajkumar/order-signal-front-end-mock:0.1.0"
+        imagePullPolicy: "Always"
+        name: "order-signal-front-end-mock-deployment"
+        ports:       
+        - containerPort: 8280
+          name: http            
+        volumeMounts: []
+      hostAliases: []
+      imagePullSecrets: []
+      initContainers: []
+      nodeSelector: {}
+      tolerations: []
+      volumes: []
