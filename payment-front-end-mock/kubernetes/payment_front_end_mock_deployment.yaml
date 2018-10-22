@@ -1,0 +1,41 @@
+---
+apiVersion: "extensions/v1beta1"
+kind: "Deployment"
+metadata:
+  annotations: {}
+  finalizers: []
+  labels:
+    app: "payment-front-end-mock"
+    integration: "refund"
+  name: "payment-front-end-mock-deployment"
+  namespace: "default"
+  ownerReferences: []
+spec:
+  replicas: 1
+  template:
+    metadata:
+      annotations: {}
+      finalizers: []
+      labels:
+        app: "payment-front-end-mock"
+        integration: "refund"
+      ownerReferences: []
+    spec:
+      containers:
+      - args: []
+        command: []
+        env: []              
+        envFrom: []
+        image: "rajkumar/payment-front-end-mock:0.1.0"
+        imagePullPolicy: "Always"
+        name: "payment-front-end-mock-deployment"
+        ports:       
+        - containerPort: 8280
+          name: http            
+        volumeMounts: []
+      hostAliases: []
+      imagePullSecrets: []
+      initContainers: []
+      nodeSelector: {}
+      tolerations: []
+      volumes: []
